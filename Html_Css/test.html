@@ -2,11 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" cotent="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }s
+    h1 {
+        color: #333;
+    }
+    p {
+        color: #666;
+    }
+    </style>
+
 </head>
 <body>
     <h1>Hello,World!</h1>
     <p>这是一个测试页面。</p>
+    <h1></h1>
+    <!-- 插入一个图片 -->
+    <!-- <img src="path/to/image.jpg" alt="描述文本"> -->
 </body>
+
+<script>
+    //方式一: 写入浏览器的body区域
+    document.write("Hello JS (document.write)");
+
+    //方式二: 弹出框
+    window.alert("Hello JS (window.alert)");
+
+    //方式三: 控制台
+    console.log("Hello JS (console.log)")
+
+    // 测试
+    let name = 'Tom';
+    let age = 18;
+    console.log('大家好, 我是新入职的' + name + ', 今年' + age + '岁了, 请多多关照'); //原始方式 , 手动拼接字符串
+    console.log(`大家好, 我是新入职的${name}, 今年${age}岁了, 请多多关照`); //使用模板字符串方式拼接字符串
+
+</script>
+
 </html>
