@@ -28,38 +28,200 @@
         body {
             margin: 0;
         }
+
+
+        /* 搜索表单样式 */
+        .search-form {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 10px; /* 控件之间的间距 */
+            margin: 20px 0;
+        }
+        .search-form input[type="text"], .search-form select {
+            padding: 5px; /* 输入框内边距 */
+            width: 300px; /* 宽度 */
+        }
+        .search-form button {
+            padding: 5px 15px; /* 按钮内边距 */
+        }
+
+        /* 搜索表单样式 */
+        .search-form {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 10px; /* 控件之间的间距 */
+            margin: 20px 0;
+        }
+        .search-form input[type="text"], .search-form select {
+            padding: 5px; /* 输入框内边距 */
+            width: 200px; /* 宽度 */
+        }
+        .search-form button {
+            padding: 5px 15px; /* 按钮内边距 */
+        }
+
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd; /* 边框 */
+            padding: 8px; /* 单元格内边距 */
+            text-align: center; /* 左对齐 */
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+        }
+
+        #container1 {
+            width: 80%; /* 宽度为80% */
+            margin: 0 auto; /* 水平居中 */
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background-color: #b5b3b3; /* 灰色背景 */
+            color: white; /* 白色文字 */
+            text-align: center; /* 居中文本 */
+            padding: 10px 0; /* 上下内边距 */
+            margin-top: 30px;
+        }
+
+
     </style>
 </head>
 <body>
-    <!-- 顶部导航栏 -->
-    <div class="navbar">
-        <h1>Tlias智能学习辅助系统</h1>
-        <a href="#">退出登录</a>
+    <div id="container1">
+        <!-- 顶部导航栏 -->
+        <div class="navbar">
+            <h1>Tlias智能学习辅助系统</h1>
+            <a href="#">退出登录</a>
+        </div>
+
+        <!-- 
+        form表单：
+            action：表单数据提交的url地址
+            method： 提交方式
+            get：默认，表单数据会出现在url后面，形式：/save?name=Tom&age=18
+                特点：
+                1.如果表单中包含了隐私数据，get方式并不安全，不推荐使用该方式•
+                2. 在浏览器中get请求的大小是有限制的，不适合提交大数据量的表单•
+            post：表单数据会在消息体/请求体中提交到服务器
+                特点：
+                1．安全.
+                2．请求大小没有限制
+            注意：表单项要想能够采集数据，必须得设置name属性，表示当前表单项的名字
+                -->
+        <form class="search-form" action="/search" method="post">
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" placeholder="请输入姓名">
+
+            <label for="gender">性别：</label>
+            <select id="gender" name="gender">
+                <option value=""></option>
+                <option value="1">男</option>
+                <option value="2">女</option>
+            </select>
+
+            <label for="position">职位：</label>
+            <select id="position" name="position">
+                <option value=""></option>
+                <option value="1">班主任</option>
+                <option value="2">讲师</option>
+                <option value="3">学工主管</option>
+                <option value="4">教研主管</option>
+                <option value="5">咨询师</option>
+            </select>
+
+            <button type="submit">查询</button>
+            <button type="reset">清空</button>
+        </form>
+
+            <!-- 表格展示区 -->
+        <table>
+            <!-- 表头 -->
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>头像</th>
+                    <th>职位</th>
+                    <th>入职日期</th>
+                    <th>最后操作时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+
+            <!-- 表格主体内容 -->
+            <tbody>
+                <tr>
+                    <td>令狐冲</td>
+                    <td>男</td>
+                    <td><img class="avatar" src="https://web-framework.oss-cn-hangzhou.aliyuncs.com/2023/1.jpg" alt="令狐冲"></td>
+                    <td>讲师</td>
+                    <td>2021-06-15</td>
+                    <td>2024-09-16 15:30</td>
+                    <td class="action-buttons">
+                        <button type="button">编辑</button>
+                        <button type="button">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>任盈盈</td>
+                    <td>女</td>
+                    <td><img class="avatar" src="https://web-framework.oss-cn-hangzhou.aliyuncs.com/2023/1.jpg" alt="任盈盈"></td>
+                    <td>咨询师</td>
+                    <td>2021-07-20</td>
+                    <td>2024-09-17 09:00</td>
+                    <td class="action-buttons">
+                        <button type="button">编辑</button>
+                        <button type="button">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>向问天</td>
+                    <td>男</td>
+                    <td><img class="avatar" src="https://web-framework.oss-cn-hangzhou.aliyuncs.com/2023/1.jpg" alt="向问天"></td>
+                    <td>教研主管</td>
+                    <td>2021-05-01</td>
+                    <td>2024-09-15 17:45</td>
+                    <td class="action-buttons">
+                        <button type="button">编辑</button>
+                        <button type="button">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>任我行</td>
+                    <td>男</td>
+                    <td><img class="avatar" src="https://web-framework.oss-cn-hangzhou.aliyuncs.com/2023/1.jpg" alt="向问天"></td>
+                    <td>教研主管</td>
+                    <td>2021-05-01</td>
+                    <td>2024-09-15 17:45</td>
+                    <td class="action-buttons">
+                        <button type="button">编辑</button>
+                        <button type="button">删除</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 页脚版权区域 -->
+        <footer class="footer">
+            <p>江苏传智播客教育科技股份有限公司</p>
+            <p>版权所有 Copyright 2006-2024 All Rights Reserved</p>
+        </footer>
     </div>
 
-    <!-- 
-    form表单：
-        action：表单数据提交的url地址
-        method： 提交方式
-        get：默认，表单数据会出现在url后面，形式：/save?name=Tom&age=18
-            特点：
-            1.如果表单中包含了隐私数据，get方式并不安全，不推荐使用该方式•
-            2. 在浏览器中get请求的大小是有限制的，不适合提交大数据量的表单•
-        post：表单数据会在消息体/请求体中提交到服务器
-            特点：
-            1．安全.
-            2．请求大小没有限制
-        注意：表单项要想能够采集数据，必须得设置name属性，表示当前表单项的名字
-            -->
-    <form action="/save" method="post">
-        姓名：<input type="text" name="name">
-        <br><br>
-        年龄：<input type="number" name="age">
-        <br><br>
-        <input type="submit" value="提交">
-    </form>
-
-    <form>
-    </form>
 </body>
 </html>
