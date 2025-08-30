@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+
+</head>
+<body>
+    <h1>JS语法</h1>
+
+
+
+    <script>
+        console.log("Hello, JS!");
+        // 函数表达式
+        let dwz1 = function(ww,wz) {
+            console.log(ww,wz);
+        }
+        dwz1("Hello","Function");
+        // 箭头函数
+        let dwz = (ww,wz) => {
+            console.log(ww,wz);
+        }
+        dwz("Hello","Arrow Function");
+
+
+        let test = {
+            name: "Test",
+            age: 1,
+            school: "FOSU"
+        }
+        // 只能显示是个对象
+        alert(test);
+        alert(test.age); // 只能显示属性值
+        // 正确的输出方法
+        alert(JSON.stringify(test)); // JSON.stringify() 方法将 JavaScript 对象转换为 JSON 字符串
+
+
+        let personJSON = '{"name":"John", "age":30, "city":"New York"}';
+        alert(JSON.parse(personJSON).name); // JSON.parse() 方法将 JSON 字符串转换为 JavaScript 对象
+    </script>
+</body>
+
+
+</html>
+

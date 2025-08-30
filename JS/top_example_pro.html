@@ -222,6 +222,19 @@
             <p>版权所有 Copyright 2006-2024 All Rights Reserved</p>
         </footer>
     </div>
+    
+    <script>
+        // 鼠标移入移出事件
+        let trs = document.querySelectorAll('tr') // 获取所有表格行
+        for(let i = 0;i<trs.length;i++){
+            trs[i].addEventListener('mouseenter', function() { // 鼠标移入
+                trs[i].style.backgroundColor = '#f2e2e2'; // 设置背景色
+            });
+            trs[i].addEventListener('mouseleave', function() { // 鼠标移出
+                trs[i].style.backgroundColor = '#fff';
+            });
+        }
+    </script>
 
     
 

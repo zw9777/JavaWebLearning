@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件监听</title>
+</head>
+<body>
+    <input type="button" id="btn" value="点击我1">
+    <input type="button" id="btn2" value="点击我2">
+
+
+
+    <script>
+        // 现在的写法（可以多次绑定同一个事件）
+        document.querySelector('#btn').addEventListener('click', function() {
+            console.log('按钮1被点击了！');
+        });
+        document.querySelector('#btn2').addEventListener('click', function() {
+            console.log('按钮2被点击了！');
+        });
+
+        // 旧的写法（只能绑定一个事件,会覆盖）
+        document.querySelector('#btn').onclick = function() {
+            console.log('按钮1被点击了！old');
+        };
+        document.querySelector('#btn2').onclick = function() {
+            console.log('按钮2被点击了！old');
+        };
+    </script>
+
+</body>
+</html>
